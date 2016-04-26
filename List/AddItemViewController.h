@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AddItemViewControllerDelegate <NSObject>
+
+-(void) didSaveNewTodo: (NSString *)todoText;
+
+
+@end
+
 @interface AddItemViewController : UIViewController
+
+@property (nonatomic, strong) id <AddItemViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UITextField *textfield;
+
+- (IBAction)cancel:(id)sender;
+- (IBAction)save:(id)sender;
 
 @end

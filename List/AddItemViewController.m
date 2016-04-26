@@ -8,6 +8,8 @@
 
 #import "AddItemViewController.h"
 
+
+
 @interface AddItemViewController ()
 
 @end
@@ -34,4 +36,17 @@
 }
 */
 
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)save:(id)sender {
+    
+    [self.delegate didSaveNewTodo:self.textfield.text];
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+}
 @end
